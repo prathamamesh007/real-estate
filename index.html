@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Find your perfect home with Premium Estates - Luxury real estate agency offering residential and commercial properties for sale and rent">
+    <meta name="keywords"
+        content="real estate, luxury homes, properties for sale, properties for rent, premium estates">
+    <title>Premium Estates - Find Your Perfect Home Today</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/enhancements.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <i class="fas fa-home"></i>
+                Premium<span>Estates</span>
+            </a>
+
+            <ul class="navbar-menu" id="navbarMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#properties">Properties</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#agents">Agents</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <button class="navbar-toggle" id="navbarToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&h=1080&fit=crop" alt="Luxury Home"
+            class="hero-background">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Find Your Perfect Home Today</h1>
+            <p>Discover luxury properties in prime locations with Premium Estates</p>
+
+            <div class="hero-search">
+                <input type="text" class="search-input" placeholder="Enter location..." id="searchLocation">
+
+                <select class="search-select" id="searchType">
+                    <option value="">Property Type</option>
+                    <option value="house">House</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="villa">Villa</option>
+                    <option value="penthouse">Penthouse</option>
+                    <option value="commercial">Commercial</option>
+                </select>
+
+                <select class="search-select" id="searchBudget">
+                    <option value="">Budget</option>
+                    <option value="0-500000">Under $500K</option>
+                    <option value="500000-1000000">$500K - $1M</option>
+                    <option value="1000000-2000000">$1M - $2M</option>
+                    <option value="2000000+">$2M+</option>
+                </select>
+
+                <button class="btn btn-accent" onclick="searchProperties()">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down" style="font-size: 2rem; color: white; opacity: 0.7;"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section class="section" id="properties">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Properties</h2>
+                <p>Handpicked selection of our finest luxury properties</p>
+            </div>
+
+            <div class="properties-grid" id="featuredProperties">
+                <!-- Property Card 1 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop"
+                            alt="Modern Villa">
+                        <span class="property-tag">For Sale</span>
+                        <span class="property-price">$1,850,000</span>
+                    </div>
+                    <div class="property-content">
+                        <h3 class="property-title">Luxury Modern Villa</h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Beverly Hills, California</span>
+                        </div>
+                        <div class="property-features">
+                            <div class="property-feature">
+                                <i class="fas fa-bed"></i>
+                                <span>5 Beds</span>
+                            </div>
+                            <div class="property-feature">
+                                <i class="fas fa-bath"></i>
+                                <span>4 Baths</span>
+                            </div>
+                            <div class="property-feature">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>4,500 sqft</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 2 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop"
+                            alt="Penthouse">
+                        <span class="property-tag for-rent">For Rent</span>
+                        <span class="property-price">$8,500/mo</span>
+                    </div>
+                    <div class="property-content">
+                        <h3 class="property-title">Downtown Penthouse</h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Manhattan, New York</span>
+                        </div>
+                        <div class="property-features">
+                            <div class="property-feature">
+                                <i class="fas fa-bed"></i>
+                                <span>3 Beds</span>
+                            </div>
+                            <div class="property-feature">
+                                <i class="fas fa-bath"></i>
+                                <span>3 Baths</span>
+                            </div>
+                            <div class="property-feature">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>2,800 sqft</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 3 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop"
+                            alt="Beach House">
+                        <span class="property-tag">For Sale</span>
+                        <span class="property-price">$2,950,000</span>
+                    </div>
+                    <div class="property-content">
+                        <h3 class="property-title">Oceanfront Beach House</h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Malibu, California</span>
+                        </div>
+                        <div class="property-features">
+                            <div class="property-feature">
+                                <i class="fas fa-bed"></i>
+                                <span>6 Beds</span>
+                            </div>
+                            <div class="property-feature">
+                                <i class="fas fa-bath"></i>
+                                <span>5 Baths</span>
+                            </div>
+                            <div class="property-feature">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>5,200 sqft</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 4 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop"
+                            alt="Family Home">
+                        <span class="property-tag for-rent">For Rent</span>
+                        <span class="property-price">$4,200/mo</span>
+                    </div>
+                    <div class="property-content">
+                        <h3 class="property-title">Elegant Family Home</h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Austin, Texas</span>
+                        </div>
+                        <div class="property-features">
+                            <div class="property-feature">
+                                <i class="fas fa-bed"></i>
+                                <span>4 Beds</span>
+                            </div>
+                            <div class="property-feature">
+                                <i class="fas fa-bath"></i>
+                                <span>3 Baths</span>
+                            </div>
+                            <div class="property-feature">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>3,200 sqft</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 5 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop"
+                            alt="Modern Loft">
+                        <span class="property-tag">For Sale</span>
+                        <span class="property-price">$1,250,000</span>
+                    </div>
+                    <div class="property-content">
+                        <h3 class="property-title">Industrial Chic Loft</h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Brooklyn, New York</span>
+                        </div>
+                        <div class="property-features">
+                            <div class="property-feature">
+                                <i class="fas fa-bed"></i>
+                                <span>2 Beds</span>
+                            </div>
+                            <div class="property-feature">
+                                <i class="fas fa-bath"></i>
+                                <span>2 Baths</span>
+                            </div>
+                            <div class="property-feature">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>1,800 sqft</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 6 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&h=600&fit=crop"
+                            alt="Suburban Estate">
+                        <span class="property-tag">For Sale</span>
+                        <span class="property-price">$3,450,000</span>
+                    </div>
+                    <div class="property-content">
+                        <h3 class="property-title">Grand Suburban Estate</h3>
+                        <div class="property-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Greenwich, Connecticut</span>
+                        </div>
+                        <div class="property-features">
+                            <div class="property-feature">
+                                <i class="fas fa-bed"></i>
+                                <span>7 Beds</span>
+                            </div>
+                            <div class="property-feature">
+                                <i class="fas fa-bath"></i>
+                                <span>6 Baths</span>
+                            </div>
+                            <div class="property-feature">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>6,800 sqft</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section class="section bg-beige" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Premium Estates</h2>
+                <p>Your trusted partner in luxury real estate</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2,500+</div>
+                    <div class="stat-label">Properties Sold</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Expert Agents</div>
+                </div>
+            </div>
+
+            <div style="max-width: 800px; margin: 3rem auto; text-align: center;">
+                <p style="font-size: 1.125rem; line-height: 1.8; color: var(--color-dark-grey);">
+                    For over 15 years, Premium Estates has been the premier choice for luxury real estate in the
+                    nation's most desirable locations.
+                    Our commitment to excellence, personalized service, and deep market knowledge has helped thousands
+                    of clients find their dream homes
+                    and make sound investment decisions. We don't just sell properties—we create lasting relationships
+                    and turn real estate dreams into reality.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section" id="why-choose-us">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Premium Estates</h2>
+                <p>Experience the difference of working with industry leaders</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Verified Listings</h3>
+                    <p class="feature-description">
+                        Every property is thoroughly verified and inspected to ensure authenticity and quality
+                        standards.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="feature-title">Certified Agents</h3>
+                    <p class="feature-description">
+                        Work with licensed, experienced agents who are experts in their local markets.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="feature-title">Transparent Process</h3>
+                    <p class="feature-description">
+                        Clear communication and honest guidance throughout your entire real estate journey.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Market Expertise</h3>
+                    <p class="feature-description">
+                        Deep insights and data-driven analysis to help you make informed decisions.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="feature-title">24/7 Support</h3>
+                    <p class="feature-description">
+                        Round-the-clock customer service to assist you whenever you need help.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3 class="feature-title">Best Value</h3>
+                    <p class="feature-description">
+                        Competitive pricing and exclusive deals to maximize your investment value.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team / Agents -->
+    <section class="section bg-beige" id="agents">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Our Expert Agents</h2>
+                <p>Professional team dedicated to your success</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop"
+                            alt="Agent">
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                            <a href="#"><i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-content">
+                        <h3 class="team-name">Michael Anderson</h3>
+                        <p class="team-role">Senior Real Estate Agent</p>
+                        <p class="team-contact">michael@premiumestates.com</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop"
+                            alt="Agent">
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                            <a href="#"><i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-content">
+                        <h3 class="team-name">Sarah Mitchell</h3>
+                        <p class="team-role">Luxury Property Specialist</p>
+                        <p class="team-contact">sarah@premiumestates.com</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop"
+                            alt="Agent">
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                            <a href="#"><i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-content">
+                        <h3 class="team-name">David Chen</h3>
+                        <p class="team-role">Commercial Real Estate Expert</p>
+                        <p class="team-contact">david@premiumestates.com</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=500&fit=crop"
+                            alt="Agent">
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                            <a href="#"><i class="fas fa-phone"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-content">
+                        <h3 class="team-name">Emily Rodriguez</h3>
+                        <p class="team-role">Residential Property Consultant</p>
+                        <p class="team-contact">emily@premiumestates.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p>Real stories from satisfied homeowners</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">
+                        "Premium Estates made our dream home a reality. Their team was professional, knowledgeable, and
+                        went above and beyond
+                        to ensure we found the perfect property. Highly recommended!"
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+                            alt="Client" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>James Wilson</h4>
+                            <p>Homeowner, Beverly Hills</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">
+                        "Outstanding service from start to finish. Sarah helped us navigate the competitive market and
+                        secured our penthouse
+                        at an excellent price. We couldn't be happier!"
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+                            alt="Client" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Jennifer Martinez</h4>
+                            <p>Property Investor, Manhattan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">
+                        "As first-time buyers, we were nervous about the process. Michael guided us every step of the
+                        way with patience and expertise.
+                        We found our perfect family home thanks to Premium Estates!"
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
+                            alt="Client" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Robert Thompson</h4>
+                            <p>Homeowner, Austin</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section bg-beige" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>Ready to find your dream property? Contact us today</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-item-content">
+                            <h4>Visit Our Office</h4>
+                            <p>123 Luxury Avenue, Suite 500<br>Los Angeles, CA 90001</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-item-content">
+                            <h4>Call Us</h4>
+                            <p>+1 (555) 123-4567<br>Mon - Sat: 9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-item-content">
+                            <h4>Email Us</h4>
+                            <p>info@premiumestates.com<br>support@premiumestates.com</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.3313!2d-118.2437!3d34.0522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDAzJzA4LjAiTiAxMTjCsDE0JzM3LjMiVw!5e0!3m2!1sen!2sus!4v1234567890"
+                            width="100%" height="300" style="border:0; border-radius: 1rem;" allowfullscreen=""
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Full Name *</label>
+                            <input type="text" id="name" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" id="email" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea id="message" class="form-textarea" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Premium<span style="color: var(--color-accent);">Estates</span></h3>
+                    <p>
+                        Your trusted partner in luxury real estate. We help you find not just a house, but a home where
+                        memories are made.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#properties">Properties</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#agents">Our Agents</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Property Types</h3>
+                    <ul class="footer-links">
+                        <li><a href="#properties">Houses</a></li>
+                        <li><a href="#properties">Apartments</a></li>
+                        <li><a href="#properties">Villas</a></li>
+                        <li><a href="#properties">Penthouses</a></li>
+                        <li><a href="#properties">Commercial</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Premium Estates. All rights reserved. | Designed with <i class="fas fa-heart"
+                        style="color: var(--color-accent);"></i> for luxury living</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

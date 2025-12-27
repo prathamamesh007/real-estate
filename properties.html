@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse all luxury properties - Premium Estates real estate listings">
+    <title>Property Listings - Premium Estates</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        .properties-page {
+            margin-top: 100px;
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .properties-header {
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .properties-layout {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: var(--spacing-2xl);
+            align-items: start;
+        }
+
+        .filters-sidebar {
+            background: var(--color-white);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 100px;
+        }
+
+        .filters-title {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-black);
+            margin-bottom: var(--spacing-lg);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 2px solid var(--color-light-grey);
+        }
+
+        .filter-group {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .filter-label {
+            display: block;
+            font-weight: var(--font-weight-medium);
+            color: var(--color-charcoal);
+            margin-bottom: var(--spacing-sm);
+            font-size: var(--font-size-sm);
+        }
+
+        .filter-input,
+        .filter-select {
+            width: 100%;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: 2px solid var(--color-light-grey);
+            border-radius: var(--radius-md);
+            font-family: var(--font-body);
+            font-size: var(--font-size-sm);
+            transition: border-color var(--transition-fast);
+        }
+
+        .filter-input:focus,
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-lg);
+        }
+
+        .btn-filter {
+            flex: 1;
+            padding: var(--spacing-sm) var(--spacing-md);
+            font-size: var(--font-size-sm);
+        }
+
+        .properties-content {
+            min-height: 500px;
+        }
+
+        .properties-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-xl);
+            padding: var(--spacing-md);
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .properties-count {
+            font-weight: var(--font-weight-medium);
+            color: var(--color-dark-grey);
+        }
+
+        .sort-select {
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: 2px solid var(--color-light-grey);
+            border-radius: var(--radius-md);
+            font-family: var(--font-body);
+            font-size: var(--font-size-sm);
+            background: var(--color-white);
+            cursor: pointer;
+        }
+
+        @media (max-width: 1024px) {
+            .properties-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .filters-sidebar {
+                position: static;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <i class="fas fa-home"></i>
+                Premium<span>Estates</span>
+            </a>
+
+            <ul class="navbar-menu" id="navbarMenu">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="properties.html">Properties</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#agents">Agents</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <button class="navbar-toggle" id="navbarToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Properties Page -->
+    <section class="properties-page">
+        <div class="container">
+            <div class="properties-header">
+                <h1>Explore Our Premium Properties</h1>
+                <p
+                    style="font-size: var(--font-size-lg); color: var(--color-grey); max-width: 600px; margin: var(--spacing-md) auto 0;">
+                    Discover your dream home from our exclusive collection of luxury properties
+                </p>
+            </div>
+
+            <div class="properties-layout">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar">
+                    <h3 class="filters-title">
+                        <i class="fas fa-filter"></i> Filters
+                    </h3>
+
+                    <div class="filter-group">
+                        <label for="filterLocation" class="filter-label">Location</label>
+                        <input type="text" id="filterLocation" class="filter-input"
+                            placeholder="Enter city or state...">
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="filterType" class="filter-label">Property Type</label>
+                        <select id="filterType" class="filter-select">
+                            <option value="">All Types</option>
+                            <option value="house">House</option>
+                            <option value="apartment">Apartment</option>
+                            <option value="villa">Villa</option>
+                            <option value="penthouse">Penthouse</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="filterStatus" class="filter-label">Status</label>
+                        <select id="filterStatus" class="filter-select">
+                            <option value="">All</option>
+                            <option value="sale">For Sale</option>
+                            <option value="rent">For Rent</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="filterMinPrice" class="filter-label">Min Price ($)</label>
+                        <input type="number" id="filterMinPrice" class="filter-input" placeholder="0" min="0">
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="filterMaxPrice" class="filter-label">Max Price ($)</label>
+                        <input type="number" id="filterMaxPrice" class="filter-input" placeholder="Any" min="0">
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="filterBedrooms" class="filter-label">Min Bedrooms</label>
+                        <select id="filterBedrooms" class="filter-select">
+                            <option value="0">Any</option>
+                            <option value="1">1+</option>
+                            <option value="2">2+</option>
+                            <option value="3">3+</option>
+                            <option value="4">4+</option>
+                            <option value="5">5+</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-buttons">
+                        <button class="btn btn-primary btn-filter" onclick="filterProperties()">
+                            <i class="fas fa-search"></i> Apply
+                        </button>
+                        <button class="btn btn-outline btn-filter" onclick="resetFilters()">
+                            <i class="fas fa-redo"></i> Reset
+                        </button>
+                    </div>
+                </aside>
+
+                <!-- Properties Content -->
+                <div class="properties-content">
+                    <div class="properties-toolbar">
+                        <div class="properties-count" id="propertiesCount">
+                            Showing 8 properties
+                        </div>
+                        <div>
+                            <label for="sortBy"
+                                style="margin-right: var(--spacing-sm); color: var(--color-dark-grey); font-size: var(--font-size-sm);">Sort
+                                by:</label>
+                            <select id="sortBy" class="sort-select" onchange="sortProperties(this.value)">
+                                <option value="default">Default</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="newest">Newest First</option>
+                                <option value="area-large">Largest Area</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="properties-grid" id="propertiesContainer">
+                        <!-- Properties will be loaded here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Premium<span style="color: var(--color-accent);">Estates</span></h3>
+                    <p>Your trusted partner in luxury real estate.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@premiumestates.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Los Angeles, CA</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Premium Estates. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        function resetFilters() {
+            document.getElementById('filterLocation').value = '';
+            document.getElementById('filterType').value = '';
+            document.getElementById('filterStatus').value = '';
+            document.getElementById('filterMinPrice').value = '';
+            document.getElementById('filterMaxPrice').value = '';
+            document.getElementById('filterBedrooms').value = '0';
+            document.getElementById('sortBy').value = 'default';
+
+            // Reload all properties
+            displayProperties(properties);
+            updatePropertiesCount(properties.length);
+        }
+
+        function updatePropertiesCount(count) {
+            document.getElementById('propertiesCount').textContent = `Showing ${count} ${count === 1 ? 'property' : 'properties'}`;
+        }
+
+        // Override displayProperties to update count
+        const originalDisplayProperties = displayProperties;
+        displayProperties = function (propertiesToDisplay) {
+            originalDisplayProperties(propertiesToDisplay);
+            updatePropertiesCount(propertiesToDisplay.length);
+        };
+    </script>
+</body>
+
+</html>
